@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.98",
 	"appid": "touristappid",
-	"projectname": "project",
+	"projectname": "mall-new",
 	"condition": {
 		"search": {
 			"current": -1,

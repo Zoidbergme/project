@@ -1,2 +1,32 @@
 <!--pages/personal/index.wxml-->
-<text>pages/personal/index.wxml</text>
+<!-- <text>pages/personal/index.wxml</text> -->
+<view>
+  <view class='personalwrapper'>
+    <view class='infowrapper'>
+      <view class='avatar'>
+        <image class='userInfo-avatar' src="{{userInfo.avatarUrl}}"></image>
+        <text class='userInfo-nickname'>{{userInfo.nickName}}</text>
+      </view>
+    </view>
+    <view class='mask'>
+    
+    
+    </view>
+    <!-- <view class='access'>
+      <block wx:for = "{{[1,2,3]}}">    
+      <view class='icon'></view>
+      </block>
+    </view> -->
+  </view>
+  <view>
+    <view wx:for = "{{userListInfo}}" wx:key = "{{index}}">
+      <navigator url="{{item.nexturl}}" class='itemwrapper'>
+      <image src='{{item.icon}}' class='icon'></image>
+      <view class='text'>{{item.text}}</view>
+      </navigator>
+    </view>
+  
+  
+  
+  </view>
+</view>
