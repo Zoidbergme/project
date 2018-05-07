@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/cart/index",
+    "pages/personal/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Mr 治的小商店",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#7e7e7e",
+    "selectedColor": "#c92607",
+    "borderStyle": "white",
+    "backgroundColor": "ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/footer-icon-home.png",
+        "selectedIconPath": "images/footer-icon-home-active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "iconPath": "images/footer-icon-cart.png",
+        "selectedIconPath": "images/footer-icon-cart-active.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/personal/index",
+        "iconPath": "images/footer-icon-personal.png",
+        "selectedIconPath": "images/footer-icon-personal-active.png",
+        "text": "个人中心"
+      }
+    ]
+  }
+}

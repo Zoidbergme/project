@@ -1,0 +1,90 @@
+/**index.wxss**/
+
+/* .userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+} */
+
+.swpcontainer {
+  background-color: #f2f2f2;
+  width: 100%;
+  height: 330rpx;
+}
+
+.swiper_box {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-item image {
+  width: 100%;
+  height: 100%;
+}
+
+.split {
+  width: 100%;
+  height: 148rpx;
+  background-color: #eee;
+  padding: 10rpx 0;
+}
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.txt{
+  font-size: 32rpx;
+  line-height: 55rpx;
+}
+.divLine{
+ background: #E0E3DA;
+ width: 109rpx;
+ height: 1rpx;
+}
+.goodwrapper{
+  width: 100%;
+  height:450rpx;
+  padding: 5rpx 10rpx;
+  background-color: #eee;
+}
+.navwrapper{
+  width: 100%;
+  height: 100%
+}
+.goodsImage{
+  width: 100%;
+  height: 100%;
+}
+.tip{
+  width: 100%;
+  height: 98rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.txttip{
+  font-size: 18rpx;
+  line-height: 55rpx;
+  color: #aaaaaa
+}

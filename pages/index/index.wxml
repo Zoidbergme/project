@@ -1,0 +1,52 @@
+<!--index.wxml-->
+<!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view> -->
+
+
+<view>
+  <view class='swpcontainer'>
+    <swiper class="swiper_box" indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+      <block wx:for="{{images}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src='{{item}}' class='slide-image'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class='split'>
+    <view class='wrap'>
+      <view class="divLine"></view>
+      <text class='txt'>商品购买区</text>
+      <view class="divLine"></view>
+    </view>
+  </view>
+
+  <view class='goods'>
+    <view class='goodwrapper' wx:for="{{goods}}" wx:key="{{index}}">
+      <navigator url="../details/index?id={{item.id}}" class='navwrapper'>     
+        <image src="{{item.pic}}" class='goodsImage'>
+        </image>
+      </navigator>
+    </view>
+  </view>
+
+  <view class='tip'>
+    <text class='txttip'>已经到底部了</text>
+  </view>
+
+
+
+
+
+</view>
