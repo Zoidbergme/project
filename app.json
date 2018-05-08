@@ -2,8 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/cart/index",
-    "pages/personal/index"
+    "pages/personal/index",
+    "pages/cart/emptycart/emptycart",
+    "pages/cart/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -25,7 +26,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/cart/index",
+        "pagePath": "pages/cart/index/index",
         "iconPath": "images/footer-icon-cart.png",
         "selectedIconPath": "images/footer-icon-cart-active.png",
         "text": "购物车"

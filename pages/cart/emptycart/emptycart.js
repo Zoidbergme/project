@@ -1,11 +1,11 @@
-// pages/cart/index.js
+// pages/cart/emptycart/emptycart.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    imgurl:"../../../images/emptycart.png"
   },
 
   /**
@@ -62,5 +62,13 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+  jump(){
+      wx.switchTab({
+        url: '../../index/index',
+      })
+      // wx.navigateBack({
+      //   delta:0
+      // })
+    }
 })

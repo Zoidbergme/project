@@ -1,0 +1,8 @@
+<!--pages/cart/emptycart/emptycart.wxml-->
+<!-- <text>pages/cart/emptycart/emptycart.wxml</text> -->
+
+<view class='wrapper'>
+      <image src='{{imgurl}}' class='imgs'></image>
+      <text class='carttxt'>购物车还是空的，去挑选喜欢的商品吧</text>
+      <text class='btnview' bindtap='jump'>去逛逛</text>
+</view>

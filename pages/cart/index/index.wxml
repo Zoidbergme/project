@@ -1,0 +1,68 @@
+<!--pages/cart/index/index.wxml-->
+<!-- <text>pages/cart/index/index.wxml</text> -->
+ <!-- <view class='cart-box'>
+  <view wx:for="{{cart}}">
+    <icon wx:if = "item.selected" type='success' color='red' bindtap='selectList' data-index="{{index}}"></icon>
+    <icon wx:else type='circle' bindtap='selectList' data-index = "{{index}}"></icon>
+
+    <navigator url="../details/details?id={{item.id}}">
+      <image class='cart-thumb' src="{{item.image}}"></image>
+    </navigator>
+
+    <text>{{item.title}}</text>
+    <text>￥{{item.price}}</text>
+
+
+    <view>
+      <text bindtap='minusCount' data-index="{{index}}">-</text>
+      <text>{{item.num}}</text>
+      <text bindtap='addCount' data-index = "{{index}}">+</text>
+    </view>
+
+    <text bindtap='deleteList' data-index="{{index}}">x</text>
+  </view> 
+</view> 
+
+
+<view>
+  <icon wx:if="{{selectAllStatus}}" type='success_circle' color='#fff' bindtap='selectAll'></icon>
+  <icon wx:else type="circle" color='#fff' bindtap='selectAll'></icon>
+  <text>全选</text>
+  <text>￥{{totalPrice}}</text>
+</view> -->
+
+<view class='notEmpty'>
+  <view wx:for = "{{carts}}" class='good'>
+    <icon wx:if = "item.selected" type='success' color='red' bindtap='selectList' data-index='{{index}}'></icon>
+    <icon wx:else type='circle' bindtap='selectList' data-index='{{index}}'></icon>
+    <view class='info'>
+
+    <navigator url='../../details/details?id={{item.id}}'>
+      <image src='{{item.image}}' class='imgs'>
+      </image>
+    </navigator>
+    <view class='txtwrapper'>
+       <text class='txt'>{{item.title}}</text><text class='txt'>{{item.info}}</text>
+    <view>
+       <text class='txt'>￥{{item.price}}</text>
+    </view>
+    </view>
+
+
+    <!-- <image src=''></image>
+    <image></image> -->
+    <view class='control'>
+      <text bindtap='minusCount' data-index="{{index}}">-</text>
+      <text>{{item.num}}</text>
+      <text bindtap='addCount' data-index = "{{index}}">+</text>
+    </view>
+
+    <text bindtap='deleteList' data-index="{{index}}">x</text>
+    </view>
+  </view>
+
+
+
+
+
+</view>
