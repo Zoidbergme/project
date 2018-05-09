@@ -1,6 +1,6 @@
-<!--pages/cart/index/index.wxml-->
+<!-- pages/cart/index/index.wxml -->
 <!-- <text>pages/cart/index/index.wxml</text> -->
- <!-- <view class='cart-box'>
+<!-- <view class='cart-box'>
   <view wx:for="{{cart}}">
     <icon wx:if = "item.selected" type='success' color='red' bindtap='selectList' data-index="{{index}}"></icon>
     <icon wx:else type='circle' bindtap='selectList' data-index = "{{index}}"></icon>
@@ -30,39 +30,59 @@
   <text>全选</text>
   <text>￥{{totalPrice}}</text>
 </view> -->
-
-<view class='notEmpty'>
-  <view wx:for = "{{carts}}" class='good'>
-    <icon wx:if = "item.selected" type='success' color='red' bindtap='selectList' data-index='{{index}}'></icon>
-    <icon wx:else type='circle' bindtap='selectList' data-index='{{index}}'></icon>
-    <view class='info'>
-
-    <navigator url='../../details/details?id={{item.id}}'>
-      <image src='{{item.image}}' class='imgs'>
-      </image>
-    </navigator>
-    <view class='txtwrapper'>
-       <text class='txt'>{{item.title}}</text><text class='txt'>{{item.info}}</text>
-    <view>
-       <text class='txt'>￥{{item.price}}</text>
-    </view>
-    </view>
-
-
-    <!-- <image src=''></image>
-    <image></image> -->
-    <view class='control'>
-      <text bindtap='minusCount' data-index="{{index}}">-</text>
-      <text>{{item.num}}</text>
-      <text bindtap='addCount' data-index = "{{index}}">+</text>
-    </view>
-
-    <text bindtap='deleteList' data-index="{{index}}">x</text>
+<view class="notEmpty" >
+  <view wx:for="{{carts}}" class="good">
+    <icon wx:if="{{item.selected}}" type="success" color="red" bindtap="selectList" data-index="{{index}}"></icon>
+    <icon wx:else type="circle" bindtap="selectList" data-index="{{index}}"></icon>
+    <view class="info">
+      <navigator url="../../details/details?id={{item.id}}">
+        <image src="{{item.image}}" class="imgs"></image>
+      </navigator>
+      <view class="txtwrapper">
+        <text class="txt title" decode='{{true}}' >{{item.title}}&nbsp;&nbsp;</text>
+        <text class="txt">{{item.info}}</text>
+        <view class='pricewrapper'>
+          <text class="txt">￥{{item.price}}</text>
+        </view>
+      </view>
+      <view class="control">
+        <view >
+          <image src='../../../images/minus.png' class='minusImg' bindtap='minusCount' data-index="{{index}}"></image>
+        </view>
+        <text class='num'>{{item.num}}</text>
+        <view >
+          <image src='../../../images/add.png' class='addImg' bindtap='addCount' data-index='{{index}}'></image>
+        </view>
+      </view>
+      <view bindtap="deleteList" data-index="{{index}}" class="deletewrapper">
+        <image src="../../../images/deleteAll.png" class='delete' />
+      </view>
     </view>
   </view>
-
-
-
-
-
+  <view class='btn'>
+    <view class='clearAll' bindtap="clearCarts">
+      清空购物车
+    </view>
+    <view class='continue' bindtap='continue'>
+      继续购物
+    </view>
+  </view>
+  <view class='bill'>
+    <view class='billInfo'>
+      <view class='circlewrapper'>
+        <view class='circle' bindtap="selectAll" >
+          <image wx:if="{{selectAllStatus}}" src="{{redDotUrl}}" class='redDot' mode='scaleToFill' />
+        </view>
+      </view>
+      <view class='priceInfo'>
+        <text class='total'>全选</text>
+        <text class='count'>共{{n}}件</text>
+        <text decode='{{true}}'>合计&nbsp;&nbsp;</text>
+        <text>￥{{totalPrice}}</text>
+      </view>
+    </view>
+    <view class='paybtn'>
+      结算
+    </view>
+  </view>
 </view>

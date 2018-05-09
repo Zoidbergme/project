@@ -1,6 +1,9 @@
 /* pages/cart/index/index.wxss */
 
+page{
+   background-color:rgba(242,242,242,0.7) 
 
+}
 
 .notEmpty{
   margin-top: 50rpx;
@@ -9,9 +12,11 @@
   width: 100%;
   height: 200rpx;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   flex-direction: row;
+  margin-bottom: 45rpx;
+  background: #ffffff;
+  padding-left:24rpx;
 }
 
 .imgs{
@@ -21,14 +26,159 @@
 .info{
   display: flex;
   flex-grow: 1;
-  position: relative
+  position: relative;
+  margin-left:24rpx;
 }
 .txt{
   font-size: 14px;
 }
+.title{
+  font-family: PingFang-SC-Bold;
+  font-size: 14px;
+	font-weight: normal;
+	font-stretch: normal;
+	color: #1c1b20;
+}
+.pricewrapper{
+  margin-top:24rpx;
+  display:flex;
+  align-items:center;
+  color:#c92607
+}
 .control{
   position: absolute;
-  top: 0;
-  right: 0
+  width:186rpx;
+  height:56rpx;
+  background:#e5e5e5;
+  bottom: 0;
+  right: 24rpx;
+  text-align:center;
+  font-size:16px;
+  line-height:56rpx;
+  border-radius:30rpx;
+}
+.deletewrapper{
+  position: absolute;
+  top: 25rpx;
+  right: 25rpx;
+}
+.btn{
+  display:flex;
+  height:50rpx;
+  align-items:center;
   
+}
+.clearAll{
+  font-size:14px;
+  height:50rpx;
+  width:200rpx;
+  line-height:50rpx;
+  text-align:center;
+  background-color:grey;
+  color:#ffffff;
+  border-radius:10rpx;
+  margin-right:20rpx;
+  margin-left: 20rpx;
+  max-width: 162rpx;
+}
+.continue{
+  font-size:14px;
+  width:200rpx;
+  height:50rpx;
+  line-height:50rpx;
+  text-align:center;
+  background-color:#c92607;
+  color:#ffffff;
+  border-radius:10rpx;
+  max-width: 162rpx;
+}
+.bill{
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+}
+
+.paybtn{
+  width:155rpx;
+  height:100%;
+  background:#c92607;
+  color:#ffffff;
+  line-height:100rpx;
+  text-align:center;
+  font-size:16px;
+}
+.billInfo{
+  flex-grow:1;
+  height:100%;
+  display:flex;
+  align-items:center
+}
+.circlewrapper{
+  height:100%;
+  display:flex;
+  align-items:center;
+  /* width:100rpx; */
+  margin-left: 20rpx;
+  justify-content:center;
+
+}
+.circle{
+ width:40rpx;
+  height:40rpx;
+  border-radius:50%;
+  border:1px solid #bfbfbf;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.redDot{
+  width:30rpx;
+  height:30rpx;
+}
+.priceInfo{
+  font-size:16px;
+  font-family: PingFang-SC-Medium;
+  color: #7e7e7e;
+  display:flex;
+  align-items:center;
+}
+.total{
+  margin-left:10rpx;
+}
+.count{
+  margin-left:40rpx;
+  margin-right:120rpx;
+}
+.delete{
+  width:52rpx;
+  height:52rpx;
+}
+.txtwrapper{
+  padding-left:35rpx
+}
+.addImg{
+  width:56rpx;
+  height:56rpx;
+}
+/* .ab{
+  position:absolute
+} */
+.minusImg{
+  width:56rpx;
+  height:56rpx;
+  z-index:999
+}
+.control{
+  display:flex;
+  color:#c92607
+  z-index:999
+}
+.num{
+  flex-grow:1
 }
