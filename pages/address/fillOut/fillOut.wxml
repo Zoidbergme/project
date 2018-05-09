@@ -1,0 +1,13 @@
+<!--pages/address/fillOut/fillOut.wxml-->
+<!-- <text>pages/address/fillOut/fillOut.wxml</text> -->
+<view class='inputwrapper'>
+    <view class='inputView'>
+        <text class='title'>收货人</text><input type="text" placeholder="" auto-focus  class='foo' bindinput = "setName" />
+    </view>
+    <view class='inputView'>
+        <text class='title'>手机号码</text><input type="digit" placeholder="" class='foo' bindinput="setPhoneNumber"/>
+    </view>
+    <view class='section'>
+        
+    </view>
+</view>

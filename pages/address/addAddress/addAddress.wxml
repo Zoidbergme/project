@@ -1,0 +1,16 @@
+<!--pages/address/addAddress/addAddress.wxml-->
+<!-- <text>pages/address/addAddress/addAddress.wxml</text> -->
+<view class='addAddressWrapper'>  
+  <view class='noAddress'>
+    <view>
+      <image src="../../../images/location2.png" class='img'/>
+    </view>
+    <text class='txt'>您还没有添加收货地址哦</text>
+  </view>
+  <view class='addNewAddress' bindtap="toFillOut">
+    添加地址
+  </view>
+
+
+
+</view>

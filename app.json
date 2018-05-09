@@ -4,7 +4,9 @@
     "pages/logs/logs",
     "pages/personal/index",
     "pages/cart/emptycart/emptycart",
-    "pages/cart/index/index"
+    "pages/cart/index/index",
+    "pages/address/addAddress/addAddress",
+    "pages/address/fillOut/fillOut"
   ],
   "window": {
     "backgroundTextStyle": "light",
