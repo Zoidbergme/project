@@ -1,0 +1,58 @@
+<!--pages/payment/tobepaid/tobepaid.wxml-->
+<!-- <text>pages/payment/tobepaid/tobepaid.wxml</text> -->
+
+<view class='paymentwrapper'>
+    <view>
+        <view class='split'></view>
+        <view class='addressInfo'>
+            <view class='section'>
+                <view>
+                    <view class='userInfo'>
+                       <image src="../../../images/people.png" class='icon'   />
+                       <text class='name'>{{user.name}}</text>
+                       <text>{{user.phone}}</text>
+                    </view>
+                    <view class='address'>
+                       <image src="../../../images/location2.png" class='icon' />
+                       <text>{{user.address}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class='split'></view>
+    </view>
+    <view class='goodswrapper'>
+        <view wx:for="{{goods}}" class='goods'>
+            <view>
+                <icon type="success" color="red" class='iconred' />
+            </view>
+            <view class='infowrapper'>
+                <navigator url="../../details?id={{item.id}}" class='imagewrapper' >
+                <image src="{{item.image}}" class='image' />
+                </navigator>
+                <view class='txtwrapper'>
+                    <text class='txt title' decode='{{true}}'>{{item.title}}&nbsp;&nbsp;</text>
+                    <text class='txt'>{{item.info}}</text>
+                    <view class='pricewrapper'>
+                        <text class='txtred'>￥{{item.price}}</text>
+                    </view>
+                    <view class='txtextra'>
+                        运费：￥{{item.extra}}
+                    </view>
+                </view>
+            </view>
+            <view class='txtred'>
+                <text>X{{item.num}}</text>
+            </view>
+        </view>
+    </view>
+    <view class='btn'>
+        <view class='info'>
+            <text class='extra'>运费：￥{{extra}}</text>
+            <text>合计：￥{{payment}}</text>
+        </view>
+        <view class='clickToPay'>
+            立即购买
+        </view>
+    </view>
+</view>

@@ -6,7 +6,9 @@
     "pages/cart/emptycart/emptycart",
     "pages/cart/index/index",
     "pages/address/addAddress/addAddress",
-    "pages/address/fillOut/fillOut"
+    "pages/address/fillOut/fillOut",
+    "pages/address/selectAdress/selectAddress",
+    "pages/payment/tobepaid/tobepaid"
   ],
   "window": {
     "backgroundTextStyle": "light",

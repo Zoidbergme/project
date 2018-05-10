@@ -1,0 +1,48 @@
+/* pages/address/selectAdress/selectAddress.wxss */
+
+
+.section{
+    background-color:#eeeeee;
+    width:100%;
+    height:160rpx;
+    margin-bottom:5rpx;
+    padding-left: 18rpx;
+    display:flex;
+    align-items:center;
+    font-size:14px;
+    color:#4e4e4e
+}
+
+.userInfo{
+    display:flex;
+    align-items:center;
+}
+
+.address{
+    display:flex;
+    align-items:center;
+}
+
+
+.icon{
+  width:24rpx;
+  height:24rpx;
+  margin-right: 10rpx;
+}
+
+.name{
+    margin-right:20rpx;
+    margin-bottom:10rpx;
+}
+
+.btn{
+    position:fixed;
+    width:100%;
+    height:100rpx;
+    background-color: #c92607;
+    font-size: 14px;
+    line-height: 100rpx;
+    text-align: center;
+    color:#ffffff;
+    bottom: 0;
+}

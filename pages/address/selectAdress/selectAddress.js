@@ -1,11 +1,11 @@
-// pages/address/addAddress/addAddress.js
+// pages/address/selectAdress/selectAddress.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    addressList:[{name:'Fry',phone:'18254564554',address:'北京东直门东方银座'},{name:'Zoidberg',phone:'18545486464',address:'成都市菁蓉镇'}]
   },
 
   /**
@@ -64,9 +64,9 @@ Page({
   
   },
 
-  toFillOut(){
+  toAdd(){
     wx.navigateTo({
-      url:'../selectAdress/selectAddress'
+      url:'../fillOut/fillOut'
     })
   }
 })

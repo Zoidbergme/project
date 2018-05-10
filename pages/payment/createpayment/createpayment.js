@@ -1,11 +1,31 @@
-// pages/address/addAddress/addAddress.js
+// pages/payment/tobepaid/tobepaid.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    user:{
+      name:'我也替你们捉急',
+      phone:'123456789',
+      address:'成都市天府新区天府五街'
+    },
+    goods:[{
+      image:'../../../images/breed.png',
+      title:'精品手撕面包',
+      info:'2.35元/斤',
+      price:2.35,
+      extra:10,
+      num:1
+    },
+    {
+      image:'../../../images/snack.png',
+      title:'精品零食',
+      info:'1.23元/斤',
+      price:1.23,
+      extra:10,
+      num:1
+    }]
   },
 
   /**
@@ -62,11 +82,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-
-  toFillOut(){
-    wx.navigateTo({
-      url:'../selectAdress/selectAddress'
-    })
   }
 })

@@ -1,0 +1,21 @@
+<!--pages/address/selectAdress/selectAddress.wxml-->
+<!-- <text>pages/address/selectAdress/selectAddress.wxml</text> -->
+
+<view class='addresswrapper'>
+    <view class='section' wx:for="{{addressList}}">
+        <view>
+            <view class='userInfo'>
+                <image src="../../../images/people.png" class='icon'   />
+                <text class='name'>{{item.name}}</text>
+                <text>{{item.phone}}</text>
+            </view>
+            <view class='address'>
+                <image src="../../../images/location2.png" class='icon' />
+                <text>{{item.address}}</text>
+            </view>
+        </view>
+    </view>
+    <view class='btn' bindtap="toAdd">
+        添加地址
+    </view>
+</view>

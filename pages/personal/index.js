@@ -77,7 +77,7 @@ Page({
     },{
       icon:'../../images/bag.png',
       text:'待付款',
-      nexturl:''
+      nexturl:'../payment/createpayment/createpayment'
     }]
 
   },
