@@ -34,8 +34,8 @@
 
   <view class='goods'>
     <view class='goodwrapper' wx:for="{{goods}}" wx:key="{{index}}">
-      <navigator url="../details/index?id={{item.id}}" class='navwrapper'>     
-        <image src="{{item.pic}}" class='goodsImage' mode='scaleToFill'>
+      <navigator url="../details/details?id={{item.goods_id}}" class='navwrapper'>     
+        <image src="{{item.original_img}}" class='goodsImage' mode='scaleToFill'>
         </image>
       </navigator>
     </view>

@@ -1,0 +1,190 @@
+/* pages/details/details.wxss */
+.swpcontainer{
+    height:677rpx;
+    position:relative;
+}
+.up{
+    margin-bottom:100rpx;
+
+}
+.swiperItem{
+    height:677rpx;
+}
+
+.swiper{
+    width:100%;
+    height:677rpx;
+}
+
+
+.slideImage{
+    width:100%;
+    height:677rpx
+}
+
+.mask{
+    width:100%;
+    height:80rpx;
+    background-color:rgba(0,0,0,0.2);
+    position:absolute;
+    left:0;
+    bottom:0
+}
+
+
+.bottomBtns{
+    position:fixed;
+    width:100%;
+    height:320rpx;
+    bottom:0;
+    left:0;
+    border:1px solid red
+}
+
+.btns{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:100rpx;
+    display:flex;
+}
+
+.nav{
+    width:300rpx;
+    background-color:#ffffff; 
+    display:flex;
+    justify-content:space-around;
+    align-items:center
+}
+
+.buy{
+    width:450rpx;
+    font-size:16px;
+    line-height:100rpx;
+    text-align:center;
+    background-color:#c92607;
+    color:#ffffff
+}
+
+.icon{
+    width:43rpx;
+    height:43rpx;
+    display:block;
+    margin-bottom:12rpx
+}
+.navwrapper{
+    font-size:12px;
+}
+
+.cartwrapper{
+    width:83rpx;
+    height:83rpx;
+    border-radius:50%;
+    border:1rpx solid #c92607; 
+    position:absolute;
+    right:12rpx;
+    top:12rpx;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:#ffffff;
+}
+
+.cart{
+    width:42rpx;
+    height:42rpx;
+}
+
+.num{
+    background:#c92607;
+    color:#ffffff;
+    font-size:12px;
+    position:absolute;
+    right:0;
+    top:0;
+    width:31rpx;
+    height:31rpx;
+    border-radius:50%;
+    text-align:center;
+    line-height:31rpx;
+}
+.img{
+    width:100%;
+    height:100%
+}
+
+.buyPanelWrapper{
+    width:100%;
+    height:280rpx;
+    border:1px solid blue;
+    position:relative;
+    top:-60rpx;
+    background-color:#ffffff;
+    padding-left:18rpx;
+}
+
+.smallpic{
+    width:200rpx;
+    height:200rpx;
+}
+.infowrapper{
+    display:flex;
+}
+.goodInfo{
+    font-size:14px
+}
+.priceInfo{
+    font-size:16px;
+    margin-top:24rpx;
+    margin-bottom:15rpx;
+    color:#c92607
+}
+.extraInfo{
+    font-size:12px
+}
+.info{
+    margin-left:24rpx;
+    height:166rpx;
+    /* padding-top:22rpx; */
+}
+.picwrapper{
+    vertical-align:bottom;
+    position:relative;
+    top:-32rpx;
+}
+.controlwrapper{
+    display:flex;
+    height:60rpx;
+    justify-content:space-between;
+    font-size:14px;
+    line-height:60rpx;
+    position:relative;
+    top:-32rpx;
+    margin-right:20rpx;
+}
+.controlpic{
+    width:60rpx;
+    height:60rpx;
+}
+.control{
+    display:flex;
+    width:200rpx;
+    height:60rpx;
+    justify-content:space-between;
+    background-color:#e5e5e5;
+    border-radius:20rpx;
+    font-size:14px;
+    color:#c92607;
+    line-height:60rpx;
+}
+
+.bigMask{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    background-color:rgba(0,0,0,0.7);
+    height:850rpx;   
+}
+

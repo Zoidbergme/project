@@ -1,0 +1,78 @@
+<!--pages/details/details.wxml-->
+<!-- <text>pages/details/details.wxml</text> -->
+<view class='detailswrapper'>
+   <view class='up'> 
+    <view class='swpcontainer'>
+        <swiper  class='swiper'  indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color='{{indicatorColor}}' indicator-active-color='{{indicatorActiveColor}}'>
+            <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+                <swiper-item class='swiperItem'>
+                    <image src="{{item}}" class="slideImage"  />
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class='mask'>
+        </view>
+    </view>
+    <view>
+        <image src="{{item}}" class='img' wx:for="{{goodInfos}}" mode='widthFix'/>
+    </view>
+   </view> 
+    <view class='bottomBtns'>
+       <view class='cartwrapper'wx:if="{{!buyPanel}}" bindtap="addToCart">
+           <image src="../../images/footer-icon-cart-active.png" class='cart' />
+            <view class='num'>
+                {{cartNum}}
+            </view>
+       </view>
+       <view class='buyPanelWrapper' wx:if="{{buyPanel}}" >
+            <view class='infowrapper'>
+                <view class='picwrapper'>
+                    <image src="{{profile}}" class='smallpic' />
+                </view>
+                <view class='info'>
+                    <view class='goodInfo'>
+                        <text>{{goodname}}</text>
+                    </view>
+                    <view class='priceInfo'>
+                        <text>￥{{goodprice}}</text>
+                    </view>
+                    <view class='extraInfo'>
+                        <text>运费：￥{{extra}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class='controlwrapper'>
+                <text>购买数量</text>
+                <view class='control'>
+                    <image src="../../images/minus.png" class='controlpic' bindtap="minus" />
+                    <view>
+                        {{num}}
+                    </view>
+                    <image src="../../images/add.png" class='controlpic' bindtap='add' />
+                </view>
+            </view>
+       </view>
+       <view class='btns'>
+           <view class='nav'>
+                <view class='navwrapper'>
+                    <navigator url="../index/index" open-type='switchTab' hover-class="className">
+                        <image src="../../images/home2.png" class='icon' />
+                        <text class='txt'>首页</text>
+                    </navigator>
+                </view>
+                <view class='navwrapper'>
+                    <navigator url="" redirect hover-class="className">
+                        <image src="../../images/headphone.png" class='icon' />
+                        <text class='txt'>客服</text>
+                    </navigator>
+                </view>
+           </view>
+           <view class='buy' bindtap="change">
+               {{title}}
+           </view>
+       </view> 
+    </view>
+</view>
+    <view class='bigMask' wx:if="{{buyPanel}}">
+    </view>
+

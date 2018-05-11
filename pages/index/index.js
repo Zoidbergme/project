@@ -63,18 +63,54 @@ Page({
     duration:1000,
     indicatorColor:"rgba(255,255,255,0.9)",
     indicatorActiveColor:"#c92607",
-    images:[
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ],
-    goods:[
-      { pic:'https://i.loli.net/2018/05/07/5af01db74bda0.jpg',id:'123'},
-      { pic:'https://i.loli.net/2018/05/07/5af01db75624a.jpg',id:'456'},
-      { pic:'https://i.loli.net/2018/05/07/5af01db7574fe.jpg',id:'789'}
-    ]
+    // images:[
+    //   'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+    //   'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+    //   'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+    // ],
+    // goods:[
+    //   { pic:'https://i.loli.net/2018/05/07/5af01db74bda0.jpg',id:'123'},
+    //   { pic:'https://i.loli.net/2018/05/07/5af01db75624a.jpg',id:'456'},
+    //   { pic:'https://i.loli.net/2018/05/07/5af01db7574fe.jpg',id:'789'}
+    // ]
   },
   swiperchange:function(e){
 
+  },
+  onLoad:function(){
+    var that = this
+    // wx.getUserInfo({
+    //   success:function(res){
+    //     console.log(res)
+    //   }
+    // })
+    // wx.getUserInfo(function(userInfo){
+    //   that.setData({
+    //     userInfo:userInfo
+    //   })
+    // })
+    let url = getApp().globalData.serverUrl
+    wx.request({
+      url:url + 'index',
+      method:'POST',
+      data:{},
+      success:function(res){
+        // console.log(res)
+        let sliderImg = res.data.data.ad.map((ele)=>{
+          return ele["ad_code"]
+        })
+        // let goodImg = res.data.data.goods.map((ele)=>{
+        //   return ele["original_img"]
+        // })
+        let goodImg = res.data.data.goods
+        // console.log(res.data.data.ad)
+        that.setData({
+          images:sliderImg,
+          goods:goodImg
+        })
+      }
+
+    })
   }
+
 })

@@ -1,0 +1,9 @@
+/* pages/payment/unpaid/unpaid.wxss */
+
+
+.wrapper{
+    display:flex;
+    align-items:center;
+    height:200rpx;
+    
+}
