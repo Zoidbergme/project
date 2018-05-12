@@ -78,7 +78,12 @@ Page({
 
   },
   onLoad:function(){
+    this.dialog = this.selectComponent("#dialog")
     var that = this
+    var logined = wx.getStorageSync('logined')
+    if(logined === 'true'){
+      this.dialog.hideDialog()
+    }
     // wx.getUserInfo({
     //   success:function(res){
     //     console.log(res)
@@ -111,6 +116,29 @@ Page({
       }
 
     })
+  },
+  onReady:function(){
+    // this.dialog = this.selectComponent("#dialog")
+  },
+  _cancelEvent(){
+    // console.log('cancel');
+    this.dialog.hideDialog()
+
+  },
+  _confirmEvent(e){
+    // console.log('confirm');
+    this.dialog.hideDialog()
+    // try{
+    //   wx.setStorageSync('userInfo',e.detail.userInfo)
+    // }catch(e){
+
+    // }
+    // console.log(e)
+    // getApp().globalData.userInfo = e.detail.userInfo
+    // wx.request({
+
+    // })
   }
+
 
 })

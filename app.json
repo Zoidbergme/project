@@ -2,15 +2,16 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/personal/index",
     "pages/cart/emptycart/emptycart",
     "pages/cart/index/index",
+    "pages/personal/index",
     "pages/address/addAddress/addAddress",
     "pages/address/fillOut/fillOut",
     "pages/address/selectAdress/selectAddress",
     "pages/payment/createpayment/createpayment",
     "pages/payment/unpaid/unpaid",
-    "pages/details/details"
+    "pages/details/details",
+    "components/dialog/dialog"
   ],
   "window": {
     "backgroundTextStyle": "light",

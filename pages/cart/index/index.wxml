@@ -35,26 +35,26 @@
     <icon wx:if="{{item.selected}}" type="success" color="red" bindtap="selectList" data-index="{{index}}"></icon>
     <icon wx:else type="circle" bindtap="selectList" data-index="{{index}}"></icon>
     <view class="info">
-      <navigator url="../../details/details?id={{item.id}}">
-        <image src="{{item.image}}" class="imgs"></image>
+      <navigator url="../../details/details?id={{item.goods_id}}">
+        <image src="{{item.original_img}}" class="imgs"></image>
       </navigator>
       <view class="txtwrapper">
-        <text class="txt title" decode='{{true}}' >{{item.title}}&nbsp;&nbsp;</text>
-        <text class="txt">{{item.info}}</text>
+        <text class="txt title" decode='{{true}}' >{{item.goods_name}}&nbsp;&nbsp;</text>
         <view class='pricewrapper'>
-          <text class="txt">￥{{item.price}}</text>
+          <text class="txt">￥{{item.shop_price}}</text>
         </view>
+        <text class="txt">{{item.freight}}</text>
       </view>
       <view class="control">
         <view >
           <image src='../../../images/minus.png' class='minusImg' bindtap='minusCount' data-index="{{index}}"></image>
         </view>
-        <text class='num'>{{item.num}}</text>
+        <text class='num'>{{item.goods_num}}</text>
         <view >
           <image src='../../../images/add.png' class='addImg' bindtap='addCount' data-index='{{index}}'></image>
         </view>
       </view>
-      <view bindtap="deleteList" data-index="{{index}}" class="deletewrapper">
+      <view bindtap="deleteList" data-index="{{index}}" class="deletewrapper" data-cartindex = "{{item.id}}"  >
         <image src="../../../images/deleteAll.png" class='delete' />
       </view>
     </view>

@@ -176,7 +176,7 @@ page{
 }
 .control{
   display:flex;
-  color:#c92607
+  color:#c92607;
   z-index:999
 }
 .num{

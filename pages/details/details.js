@@ -49,7 +49,7 @@ Page({
            })
            res.data.message
         }else{
-          wx.navigateTo({
+          wx.switchTab({
             url:'../cart/index/index'
           })
         }

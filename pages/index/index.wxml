@@ -14,6 +14,8 @@
 
 
 <view>
+  <dialog id='dialog' title='微信授权' content='允许我们获得您的公开信息(昵称&头像)' cancelText='拒绝' confirmText='允许' bind:cancelEvent = "_cancelEvent" bind:confirmEvent='_confirmEvent'>
+  </dialog>
   <view class='swpcontainer'>
     <swiper class="swiper_box" indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
       <block wx:for="{{images}}" wx:key="{{index}}">
