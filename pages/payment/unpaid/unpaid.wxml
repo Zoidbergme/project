@@ -1,27 +1,40 @@
 <!--pages/payment/unpaid/unpaid.wxml-->
 <!-- <text>pages/payment/unpaid/unpaid.wxml</text> -->
 <view class='unpaidOrdersWrappers'>
-    <view wx:for="{{unpaidgoods}}">
-        <view class='wrapper'>
-            <icon type="success" color="red" class='icon' />   
-            <view class='infowrapper'>
-                 <image src="{{item.original_img}}" class='img' /> 
-                <view class='goodswrapper'>
-                    <view class='name'>
-                        <text>{{item.goods_name}}</text>
-                    </view>
-                    <view>
-                        <text class='price'>￥{{item.shop_price}}</text>
-                        <text class='num'>x{{item.goods_num}}</text>
-                    </view>
-                    <view>
-                        <text class='num'>快递费{{item.freight}}元</text>
-                    </view>
-                </view>
-            </view>
+  <view wx:for="{{unpaidorders}}" wx:key="id" wx:for-index="index" >
+    <view class='wrapper' wx:for="{{item.goods}}" wx:for-item = "good"  wx:for-index = "idx"   wx:key="id" >
+      <icon type="success" color="red" class='icon' />
+      <view class='infowrapper'>
+        <image src="{{good.original_img}}" class='img' />
+        <view class='goodswrapper'>
+          <view class='name'>
+            <text>{{good.goods_name}}</text>
+          </view>
+          <view>
+            <text class='price'>￥{{good.goods_price}}</text>
+            <text class='num'>x{{good.goods_num}}</text>
+          </view>
+          <view>
+            <text class='num'>快递费{{item.shipping_price}}元</text>
+          </view>
         </view>
+      </view>
     </view>
     <view class='control'>
+      <view class='txt'>
+        <text decode="{{true}}">实付：￥{{item.order_amount}}&nbsp;&nbsp;(运费￥{{item.shipping_price}})</text>
+      </view>
+      <view class='btns'>
+        <view class='cancel' bindtap="cancel" data-orderid="{{item.order_id}}" data-index="{{index}}">
+          取消订单
+        </view>
+        <view class='pay' bindtap="pay" data-orderid="{{item.order_id}}">
+          去支付
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class='control'>
         <view class='txt'>
             <text decode="{{true}}">实付：￥{{total}}&nbsp;&nbsp;(运费￥{{extra}})</text>
         </view>
@@ -33,5 +46,5 @@
                 去支付
             </view>
         </view>
-    </view>
+    </view>  -->
 </view>

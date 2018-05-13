@@ -51,6 +51,9 @@
                     <image src="../../images/add.png" class='controlpic' bindtap='add' />
                 </view>
             </view>
+            <view class='closeWrapper' >
+                <image src="../../images/close.png" class='close' />
+            </view>
        </view>
        <view class='btns'>
            <view class='nav'>
@@ -73,6 +76,6 @@
        </view> 
     </view>
 </view>
-    <view class='bigMask' wx:if="{{buyPanel}}">
-    </view>
+    <!-- <view class='bigMask' wx:if="{{buyPanel}}">
+    </view> -->
 

@@ -76,7 +76,7 @@ Page({
           // console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
           wx.redirectTo({
             url: '../emptycart/emptycart',
-            complete:function(res){
+            complete: function (res) {
               console.log(res)
             }
           })
@@ -334,38 +334,38 @@ Page({
       url: '../../index/index',
     })
   },
-  goCheck(){
+  goCheck() {
     let carts = this.data.carts
-    let goodToBuy = carts.filter(function(element){
+    let goodToBuy = carts.filter(function (element) {
       return element.selected === true
     })
-    let ids = goodToBuy.map(function(element){
+    let ids = goodToBuy.map(function (element) {
       return element.id
     }).join()
     let self = this
-        self.setData({
-          goodToBuy:goodToBuy
-        })
-    wx.request({
-      url:getApp().globalData.serverUrl + 'del_cart',
-      method:'POST',
-      data:{
-        user_id:getApp().globalData.userId,
-        id:ids
-      },
-      header: {
-        "content-type": "application/x-www-form-urlencoded"
-      },
-      success:function(res){
-        // self.setData({
-        //   goodToBuy:goodToBuy
-        // })
-        // console.log(res)
-      }
+    self.setData({
+      goodToBuy: goodToBuy
     })
+    // wx.request({
+    //   url:getApp().globalData.serverUrl + 'del_cart',
+    //   method:'POST',
+    //   data:{
+    //     user_id:getApp().globalData.userId,
+    //     id:ids
+    //   },
+    //   header: {
+    //     "content-type": "application/x-www-form-urlencoded"
+    //   },
+    //   success:function(res){
+    //     // self.setData({
+    //     //   goodToBuy:goodToBuy
+    //     // })
+    //     // console.log(res)
+    //   }
+    // })
 
     wx.navigateTo({
-      url:'../../payment/createpaymentforcart/createpaymentforcart'
+      url: '../../payment/createpaymentforcart/createpaymentforcart'
     })
   },
   checkAllSelectStatus() {

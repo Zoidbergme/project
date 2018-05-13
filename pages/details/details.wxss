@@ -188,3 +188,27 @@
     height:850rpx;   
 }
 
+.close{
+    width:42rpx;
+    height:42rpx;
+}
+
+.closeWrapper{
+    /* vertical-align:bottom; */
+    position:absolute;
+    right:66rpx;
+    top:-55rpx;
+    width:42rpx;
+    height:42rpx;
+}
+
+.closeWrapper::after{
+    content:'';
+    position:absolute;
+    top:55rpx;
+    /* bottom:; */
+    left:21rpx;
+    width: 1px;
+    border:1px solid #f7f7f7;
+    background-color: #c92607
+}
