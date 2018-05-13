@@ -6,7 +6,9 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
     let self = this
-
+    self.globalData.userId = wx.getStorageSync('userId')
+    self.globalData.userInfo = wx.getStorageSync('userInfo')
+    console.log(self.globalData)
     // wx.login({
     //   success:function(res){
     //     console.log('1')

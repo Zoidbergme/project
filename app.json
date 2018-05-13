@@ -9,6 +9,7 @@
     "pages/address/fillOut/fillOut",
     "pages/address/selectAdress/selectAddress",
     "pages/payment/createpayment/createpayment",
+    "pages/payment/createpaymentforcart/createpaymentforcart",
     "pages/payment/unpaid/unpaid",
     "pages/details/details",
     "components/dialog/dialog"

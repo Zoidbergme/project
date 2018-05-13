@@ -6,13 +6,18 @@
         <view>
             <view class='userInfo'>
                 <image src="../../../images/people.png" class='icon'   />
-                <text class='name'>{{item.name}}</text>
-                <text>{{item.phone}}</text>
+                <text class='name'>{{item.consignee}}</text>
+                <text>{{item.mobile}}</text>
             </view>
             <view class='address'>
                 <image src="../../../images/location2.png" class='icon' />
-                <text>{{item.address}}</text>
+                <text>{{item.province+item.city+item.district+item.address}}</text>
             </view>
+            <view class='delete' bindtap="delete" data-index="{{index}}" data-addressid = "{{item.address_id}}">
+                <image src="../../../images/deleteAll.png" class='delIcon' />
+            </view>
+            <icon type="success" color="red" bindtap="selectAddress" wx:if="{{item.selected}}" data-index="{{index}}" class='iconSelect'/>
+            <icon  wx:else  type="circle" bindtap="selectAddress" data-index="{{index}}" class='iconSelect'/>
         </view>
     </view>
     <view class='btn' bindtap="toAdd">

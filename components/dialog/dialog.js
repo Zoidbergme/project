@@ -69,6 +69,10 @@ Component({
                   },
                   method: 'POST',
                   success:function(res){
+                    console.log("-----------------------------------------")
+                    console.log(res)
+                    wx.setStorageSync('userId',res.data.data.user_id)
+                    getApp().globalData.userId = res.data.data.user_id
                     wx.setStorageSync('logined','true')
                   }
 

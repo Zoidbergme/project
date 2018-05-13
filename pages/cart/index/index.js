@@ -1,5 +1,6 @@
 // pages/cart/index/index.js
 var app = getApp()
+var userId = getApp().globalData.userId
 Page({
 
   /**
@@ -58,20 +59,26 @@ Page({
   onShow: function () {
     let url = getApp().globalData.serverUrl
     let self = this
+    let userId = getApp().globalData.userId
     wx.request({
       url: url + 'cart',
       method: "POST",
       data: {
-        user_id: 26
+        user_id: userId
       },
       header: {
         "content-type": "application/x-www-form-urlencoded"
       },
       success: function (res) {
+        // console.log('!@#$%^&*&*%%$#@#$%%%^%%^')
         // console.log(res)
         if (res.data.data.length === 0) {
+          // console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
           wx.redirectTo({
-            url: '../emptycart/emptycart'
+            url: '../emptycart/emptycart',
+            complete:function(res){
+              console.log(res)
+            }
           })
         }
         // let carts = res.data.data
@@ -237,7 +244,7 @@ Page({
             url: getApp().globalData.serverUrl + 'cart',
             method: "POST",
             data: {
-              user_id: 26,
+              user_id: userId,
               id: e.currentTarget.dataset.cartindex
             },
             header: {
@@ -300,7 +307,7 @@ Page({
             url: url + 'del_cart',
             method: 'POST',
             data: {
-              user_id: 26,
+              user_id: userId,
               id: ''
             },
             header: {
@@ -325,6 +332,40 @@ Page({
   continue () {
     wx.switchTab({
       url: '../../index/index',
+    })
+  },
+  goCheck(){
+    let carts = this.data.carts
+    let goodToBuy = carts.filter(function(element){
+      return element.selected === true
+    })
+    let ids = goodToBuy.map(function(element){
+      return element.id
+    }).join()
+    let self = this
+        self.setData({
+          goodToBuy:goodToBuy
+        })
+    wx.request({
+      url:getApp().globalData.serverUrl + 'del_cart',
+      method:'POST',
+      data:{
+        user_id:getApp().globalData.userId,
+        id:ids
+      },
+      header: {
+        "content-type": "application/x-www-form-urlencoded"
+      },
+      success:function(res){
+        // self.setData({
+        //   goodToBuy:goodToBuy
+        // })
+        // console.log(res)
+      }
+    })
+
+    wx.navigateTo({
+      url:'../../payment/createpaymentforcart/createpaymentforcart'
     })
   },
   checkAllSelectStatus() {

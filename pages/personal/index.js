@@ -89,13 +89,19 @@ Page({
     //       userInfo:userInfo
     //     })
     // })
-    wx.getUserInfo({
-      success:function(res){
-        // console.log(res.userInfo)
-        self.setData({
-          userInfo:res.userInfo
-        })
-      }
+    // wx.getUserInfo({
+    //   success:function(res){
+    //     // console.log(res.userInfo)
+    //     self.setData({
+    //       userInfo:res.userInfo
+    //     })
+    //   }
+    // })
+    // let userInfo = getApp().globalData.userInfo
+    let userInfo = wx.getStorageSync('userInfo')
+    console.log(userInfo)
+    self.setData({
+      userInfo:userInfo
     })
   }
 })

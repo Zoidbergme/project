@@ -81,7 +81,7 @@
         <text>￥{{totalPrice}}</text>
       </view>
     </view>
-    <view class='paybtn'>
+    <view class='paybtn' bindtap="goCheck">
       结算
     </view>
   </view>

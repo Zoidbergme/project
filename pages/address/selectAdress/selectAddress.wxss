@@ -10,7 +10,8 @@
     display:flex;
     align-items:center;
     font-size:14px;
-    color:#4e4e4e
+    color:#4e4e4e;
+    position:relative;
 }
 
 .userInfo{
@@ -45,4 +46,25 @@
     text-align: center;
     color:#ffffff;
     bottom: 0;
+}
+
+.delete{
+    position:absolute;
+    right:20rpx;
+    bottom:20rpx;
+    width:34rpx;
+    height:34rpx
+}
+
+.delIcon{
+    width:34rpx;
+    height:34rpx
+}
+
+.iconSelect{
+    width:34rpx;
+    height:34rpx;
+    position:absolute;
+    right:20rpx;
+    top:20rpx
 }

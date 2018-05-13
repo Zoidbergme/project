@@ -1,9 +1,79 @@
 /* pages/payment/unpaid/unpaid.wxss */
 
-
+.icon{
+    margin:0 17rpx;
+}
 .wrapper{
     display:flex;
     align-items:center;
     height:200rpx;
-    
+    background-color:#f2f2f2;
+    margin-bottom:5rpx;
+}
+
+
+.infowrapper{
+    display:flex;
+    align-items:center
+}
+
+.control{
+    height:160rpx;
+    width:100%;
+    background-color:#ffffff;
+    padding-right:20rpx;
+    padding-top:24rpx;
+    padding-bottom:24rpx;
+}
+
+.txt{
+    display:flex;
+    justify-content:flex-end;
+    font-size:14px;
+    color:#070707;
+}
+
+.btns{
+    display:flex;
+    justify-content:flex-end;
+    text-align:center;
+    font-size:14px;
+    line-height:50rpx;
+    margin-top:40rpx;
+}
+.cancel{
+    width:162rpx;
+    height:50rpx;
+    background-color:#c9c9c9;
+    border-radius:10rpx;
+    color:#ffffff;
+    margin-right:20rpx;
+}
+.pay{
+    width:162rpx;
+    height:50rpx;
+    background-color:#c92607;
+    border-radius:10rpx;
+    color:#ffffff;
+}
+
+.img{
+    width:164rpx;
+    height:164rpx;
+    margin-right:35rpx;
+}
+.name{
+    font-size:14px;
+}
+.price{
+    font-size:16px;
+    color:#c92607;
+    margin-right:20rpx;
+
+}
+
+.num{
+    color:#939393;
+    font-size:12px;
+
 }

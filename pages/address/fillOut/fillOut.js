@@ -1,5 +1,7 @@
 // pages/address/fillOut/fillOut.js
 var tcity = require("../../../utils/citys.js")
+var url = getApp().globalData.serverUrl
+var userId = wx.getStorageSync('userId')
 Page({
 
   /**
@@ -77,6 +79,31 @@ Page({
   open:function(){
     this.setData({
       condition:!this.data.condition
+    })
+  },
+  confirm:function(){
+    var self = this
+    wx.request({
+      url: url + 'operation_address',
+      method: 'POST',
+      data: {
+        type:1,
+        user_id: userId,
+        consignee:self.data.name,
+        province:self.data.province,
+        city:self.data.city,
+        district:self.data.county,
+        address:self.data.address,
+        mobile:self.data.phoneNumber
+      },
+      header: {
+        "content-type": "application/x-www-form-urlencoded"
+      },
+      success:function(res){
+        wx.navigateBack({
+          delta:1
+        })
+      }
     })
   },
 

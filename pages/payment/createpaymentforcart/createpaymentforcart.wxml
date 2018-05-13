@@ -25,36 +25,33 @@
         <view class='split'></view>
     </view>
     <view class='goodswrapper'>
-
-                      <view  class='goods'> 
+             <view wx:for="{{goods}}" class='goods'> 
             <view>
                 <icon type="success" color="red" class='iconred' />
             </view>
             <view class='infowrapper'>
-                <navigator url="../../details?id={{good.id}}" class='imagewrapper' >
-                <image src="{{good.image}}" class='image' />
+                <navigator url="../../details?id={{item.goods_id}}" class='imagewrapper' >
+                <image src="{{item.original_img}}" class='image' />
                 </navigator>
                 <view class='txtwrapper'>
-                    <text class='txt title' decode='{{true}}'>{{good.title}}&nbsp;&nbsp;</text>
-                    <!-- <text class='txt'>{{item.info}}</text> -->
+                    <text class='txt title' decode='{{true}}'>{{item.goods_name}}&nbsp;&nbsp;</text>
                     <view class='pricewrapper'>
-                        <text class='txtred'>￥{{good.price}}</text>
+                        <text class='txtred'>￥{{item.shop_price}}</text>
                     </view>
                     <view class='txtextra'>
-                        运费：￥{{good.extra}}
+                        运费：￥{{item.freight}}
                     </view>
                 </view>
             </view>
             <view class='txtred'>
-                <text>X{{good.num}}</text>
+                <text>X{{item.goods_num}}</text>
             </view>
-         </view>      
-
+         </view>     
     </view>
     <view class='btn'>
         <view class='info'>
-            <text class='extra'>运费：￥{{good.extra}}</text>
-            <text>合计：￥{{good.total}}</text>
+            <text class='extra'>运费：￥{{extra}}</text>
+            <text>合计：￥{{total}}</text>
         </view>
         <view class='clickToPay' bindtap="pay">
             立即购买

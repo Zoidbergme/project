@@ -1,4 +1,5 @@
 // pages/details/details.js
+var userId = getApp().globalData.userId
 Page({
 
   /**
@@ -31,7 +32,7 @@ Page({
       url: url + 'add_cart',
       method: 'POST',
       data: {
-        user_id: 26,
+        user_id: userId,
         goods_id: id,
         number:1
       },
@@ -57,6 +58,15 @@ Page({
     })
   },
   change() {
+    // this.setData({
+    //   title: '下一步',
+    //   buyPanel: true
+    // })
+    if(this.data.title === '下一步'){
+      wx.navigateTo({
+        url:'../payment/createpayment/createpayment'
+      })
+    }
     this.setData({
       title: '下一步',
       buyPanel: true
@@ -90,7 +100,7 @@ Page({
       url: url + 'goods_info',
       method: 'POST',
       data: {
-        user_id: 26,
+        user_id: userId,
         goods_id: id
       },
       header: {

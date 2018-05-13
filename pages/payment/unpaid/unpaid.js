@@ -26,7 +26,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var pages = getCurrentPages()
+    var prevPage = pages[pages.length - 2]
+    console.log(prevPage)
+    var unpaidgoods = prevPage.data.goods
+    var extra = prevPage.data.extra
+    var total = prevPage.data.total
+    this.setData({
+      unpaidgoods:unpaidgoods,
+      extra:extra,
+      total:total
+    })
   },
 
   /**

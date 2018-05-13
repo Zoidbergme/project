@@ -1,11 +1,36 @@
 <!--pages/payment/unpaid/unpaid.wxml-->
 <!-- <text>pages/payment/unpaid/unpaid.wxml</text> -->
 <view class='unpaidOrdersWrappers'>
-    <view wx:for="{{unpaidOrders}}">
+    <view wx:for="{{unpaidgoods}}">
         <view class='wrapper'>
-            <icon type="success" color="red" />   
+            <icon type="success" color="red" class='icon' />   
             <view class='infowrapper'>
-                
+                 <image src="{{item.original_img}}" class='img' /> 
+                <view class='goodswrapper'>
+                    <view class='name'>
+                        <text>{{item.goods_name}}</text>
+                    </view>
+                    <view>
+                        <text class='price'>￥{{item.shop_price}}</text>
+                        <text class='num'>x{{item.goods_num}}</text>
+                    </view>
+                    <view>
+                        <text class='num'>快递费{{item.freight}}元</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='control'>
+        <view class='txt'>
+            <text decode="{{true}}">实付：￥{{total}}&nbsp;&nbsp;(运费￥{{extra}})</text>
+        </view>
+        <view class='btns'>
+            <view class='cancel'>
+                取消订单    
+            </view>
+            <view class='pay'>
+                去支付
             </view>
         </view>
     </view>

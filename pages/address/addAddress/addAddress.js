@@ -66,7 +66,7 @@ Page({
 
   toFillOut(){
     wx.navigateTo({
-      url:'../selectAdress/selectAddress'
+      url:'../fillOut/fillOut'
     })
   }
 })

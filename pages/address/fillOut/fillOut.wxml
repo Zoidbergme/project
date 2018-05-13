@@ -43,7 +43,7 @@
     <view class='inputView'>
         <text class='title'>详细地址</text><input type="text" placeholder="" auto-focus bindinput = "setAddress" />
     </view>
-    <view class='btn'>
+    <view class='btn' bindtap="confirm">
         确认
     </view>
 </view>
