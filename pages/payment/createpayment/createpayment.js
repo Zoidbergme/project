@@ -117,6 +117,7 @@ Page({
     // })
     var self = this
     var userId = wx.getStorageSync('userId')
+    console.log(userId)
     wx.request({
       url: getApp().globalData.serverUrl + 'add_order',
       method: 'POST',

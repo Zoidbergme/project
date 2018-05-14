@@ -34,54 +34,149 @@ Component({
         isShow: !this.data.isShow
       })
     },
+    // agreeGetUser: function (e) {
+    //   console.log(e)
+    //   try {
+    //     wx.setStorageSync('userInfo', e.detail.userInfo)
+    //   } catch (e) {
+
+    //   }
+    //   getApp().globalData.userInfo = e.detail.userInfo
+    //   wx.login({
+    //     success: function (res) {
+    //       // console.log('@!##$$#^%%$$^&%%$%&^%$%$^%##%@!@#$$^%%^^$')
+    //       // console.log(res)
+    //       if (res.code) {
+    //         wx.request({
+    //           url: getApp().globalData.serverUrl + 'get_openid',
+    //           data: {
+    //             code: res.code
+    //           },
+    //           header: {
+    //             "content-type": "application/x-www-form-urlencoded"
+    //           },
+    //           method: 'POST',
+    //           success: function (result) {
+    //             // console.log('-------------------------------')
+    //             // console.log(result)
+    //             getApp().globalData.openId = result.data.data
+    //             wx.request({
+    //               url: getApp().globalData.serverUrl + 'login',
+    //               data: {
+    //                 account:result.data.data,
+    //                 name:getApp().globalData.userInfo.nickName,
+    //                 head_pic:getApp().globalData.userInfo.avatarUrl
+    //               },
+    //               header: {
+    //                 "content-type": "application/x-www-form-urlencoded"
+    //               },
+    //               method: 'POST',
+    //               success:function(res){
+    //                 // console.log("-----------------------------------------")
+    //                 // console.log(res)
+    //                 wx.setStorageSync('userId',res.data.data.user_id)
+    //                 getApp().globalData.userId = res.data.data.user_id
+    //                 wx.setStorageSync('logined','true')
+    //               }
+
+    //             })
+    //           }
+    //         })
+    //       }
+    //     }
+    //   })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // },
     agreeGetUser: function (e) {
       console.log(e)
+      var openid = wx.getStorageSync('openid')
       try {
         wx.setStorageSync('userInfo', e.detail.userInfo)
       } catch (e) {
 
       }
       getApp().globalData.userInfo = e.detail.userInfo
-      wx.login({
-        success: function (res) {
-          if (res.code) {
-            wx.request({
-              url: getApp().globalData.serverUrl + 'get_openid',
-              data: {
-                code: res.code
-              },
-              header: {
-                "content-type": "application/x-www-form-urlencoded"
-              },
-              method: 'POST',
-              success: function (result) {
-                // console.log(res)
-                getApp().globalData.openId = result.data.data
-                wx.request({
-                  url: getApp().globalData.serverUrl + 'login',
-                  data: {
-                    account:result.data.data,
-                    name:getApp().globalData.userInfo.nickName,
-                    head_pic:getApp().globalData.userInfo.avatarUrl
-                  },
-                  header: {
-                    "content-type": "application/x-www-form-urlencoded"
-                  },
-                  method: 'POST',
-                  success:function(res){
-                    console.log("-----------------------------------------")
-                    console.log(res)
-                    wx.setStorageSync('userId',res.data.data.user_id)
-                    getApp().globalData.userId = res.data.data.user_id
-                    wx.setStorageSync('logined','true')
-                  }
 
-                })
-              }
-            })
-          }
+      wx.request({
+        url: getApp().globalData.serverUrl + 'login',
+        data: {
+          account:openid,
+          name:getApp().globalData.userInfo.nickName,
+          head_pic:getApp().globalData.userInfo.avatarUrl
+        },
+        header: {
+          "content-type": "application/x-www-form-urlencoded"
+        },
+        method: 'POST',
+        success:function(res){
+          // console.log("-----------------------------------------")
+          // console.log(res)
+          wx.setStorageSync('userId',res.data.data.user_id)
+          getApp().globalData.userId = res.data.data.user_id
+          wx.setStorageSync('logined','true')
         }
+
       })
+
+      // wx.login({
+      //   success: function (res) {
+      //     // console.log('@!##$$#^%%$$^&%%$%&^%$%$^%##%@!@#$$^%%^^$')
+      //     // console.log(res)
+      //     if (res.code) {
+      //       wx.request({
+      //         url: getApp().globalData.serverUrl + 'get_openid',
+      //         data: {
+      //           code: res.code
+      //         },
+      //         header: {
+      //           "content-type": "application/x-www-form-urlencoded"
+      //         },
+      //         method: 'POST',
+      //         success: function (result) {
+      //           // console.log('-------------------------------')
+      //           // console.log(result)
+      //           getApp().globalData.openId = result.data.data
+      //           wx.request({
+      //             url: getApp().globalData.serverUrl + 'login',
+      //             data: {
+      //               account:result.data.data,
+      //               name:getApp().globalData.userInfo.nickName,
+      //               head_pic:getApp().globalData.userInfo.avatarUrl
+      //             },
+      //             header: {
+      //               "content-type": "application/x-www-form-urlencoded"
+      //             },
+      //             method: 'POST',
+      //             success:function(res){
+      //               // console.log("-----------------------------------------")
+      //               // console.log(res)
+      //               wx.setStorageSync('userId',res.data.data.user_id)
+      //               getApp().globalData.userId = res.data.data.user_id
+      //               wx.setStorageSync('logined','true')
+      //             }
+
+      //           })
+      //         }
+      //       })
+      //     }
+      //   }
+      // })
 
 
 

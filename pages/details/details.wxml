@@ -51,7 +51,7 @@
                     <image src="../../images/add.png" class='controlpic' bindtap='add' />
                 </view>
             </view>
-            <view class='closeWrapper' >
+            <view class='closeWrapper' bindtap="close"  >
                 <image src="../../images/close.png" class='close' />
             </view>
        </view>

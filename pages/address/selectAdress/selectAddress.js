@@ -48,8 +48,8 @@ Page({
         "content-type": "application/x-www-form-urlencoded"
       },
       success: function (res) {
-        console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        console.log(res)
+        // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+        // console.log(res)
         self.setData({
           addressList: res.data.data
         })
@@ -178,12 +178,12 @@ Page({
       addressList:addressList
 
     })
-    // wx.navigateBack({
-    //   delta:1
-    // })
-    wx.redirectTo({
-      url:'../../payment/createpayment/createpayment'
+    wx.navigateBack({
+      delta:1
     })
+    // wx.redirectTo({
+    //   url:'../../payment/createpayment/createpayment'
+    // })
   }
 
 

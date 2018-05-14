@@ -38,7 +38,6 @@
     height:320rpx;
     bottom:0;
     left:0;
-    border:1px solid red
 }
 
 .btns{
@@ -81,7 +80,6 @@
     width:83rpx;
     height:83rpx;
     border-radius:50%;
-    border:1rpx solid #c92607; 
     position:absolute;
     right:12rpx;
     top:12rpx;
@@ -117,9 +115,8 @@
 .buyPanelWrapper{
     width:100%;
     height:280rpx;
-    border:1px solid blue;
     position:relative;
-    top:-60rpx;
+    top:-55rpx;
     background-color:#ffffff;
     padding-left:18rpx;
 }
@@ -190,7 +187,7 @@
 
 .close{
     width:42rpx;
-    height:42rpx;
+    height:72rpx;
 }
 
 .closeWrapper{
@@ -199,16 +196,16 @@
     right:66rpx;
     top:-55rpx;
     width:42rpx;
-    height:42rpx;
+    height:72rpx;
 }
 
-.closeWrapper::after{
+/* .closeWrapper::after{
     content:'';
     position:absolute;
     top:55rpx;
-    /* bottom:; */
+   
     left:21rpx;
     width: 1px;
     border:1px solid #f7f7f7;
     background-color: #c92607
-}
+} */

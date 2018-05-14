@@ -73,7 +73,7 @@ Page({
     userListInfo:[{
       icon:'../../images/location.png',
       text:'收货地址管理',
-      nexturl:'../address/addAddress/addAddress'
+      nexturl:'../address/selectAdress/selectAddress'
     },{
       icon:'../../images/bag.png',
       text:'待付款',

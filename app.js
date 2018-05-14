@@ -9,6 +9,29 @@ App({
     self.globalData.userId = wx.getStorageSync('userId')
     self.globalData.userInfo = wx.getStorageSync('userInfo')
     console.log(self.globalData)
+    wx.login({
+      success: function (res) {
+        if (res.code) {
+          wx.request({
+            url: self.globalData.serverUrl + 'get_openid',
+            data: {
+              code: res.code
+            },
+            header: {
+              "content-type": "application/x-www-form-urlencoded"
+            },
+            method:'POST',
+            success:function(result){
+
+                    // console.log("-----------------------------------------")
+              // console.log(result)
+              wx.setStorageSync('openid',result.data.data)
+            }
+          })
+        }
+
+      }
+    })
     // wx.login({
     //   success:function(res){
     //     console.log('1')
@@ -94,7 +117,7 @@ App({
   //               //           // 可以将 res 发送给后台解码出 unionId
   //               //           this.globalData.userInfo = res.userInfo
   //               //           console.log(this.globalData.userInfo)
-            
+
   //               //           // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
   //               //           // 所以此处加入 callback 以防止这种情况
   //               //           if (this.userInfoReadyCallback) {
@@ -111,7 +134,7 @@ App({
 
 
 
-  
+
   //             }
   //           })
   //         }else{
@@ -147,7 +170,7 @@ App({
   // },
   globalData: {
     userInfo: null,
-    isCartEmpty:true,
-    serverUrl:'http://192.168.0.147/tourism/index.php/user/'
+    isCartEmpty: true,
+    serverUrl: 'http://192.168.0.147/tourism/index.php/user/'
   }
 })

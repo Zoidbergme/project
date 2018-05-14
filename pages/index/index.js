@@ -78,6 +78,8 @@ Page({
 
   },
   onLoad:function(){
+
+    // console.log(wx.getStorageSync(''))
     this.dialog = this.selectComponent("#dialog")
     var that = this
     var logined = wx.getStorageSync('logined')

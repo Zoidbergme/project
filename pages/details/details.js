@@ -24,6 +24,13 @@ Page({
 
 
   },
+  close(){
+    console.log('aaaaaaaaaaaaaaaaaaaaaaaaa')
+    this.setData({
+      buyPanel:false,
+      title:'立即购买'
+    })
+  },
   addToCart(){
     let cartNum = this.data.cart_num
     let url = getApp().globalData.serverUrl
